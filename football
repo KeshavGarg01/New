@@ -1,0 +1,45 @@
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int t,n,i,j,k,score=0,win=0;
+    cin>>t;
+    for(i=0; i<t; i++)
+    {
+        cin>>n;
+        int ar1[n];
+        for(j=0;j<n;j++)
+        {
+            cin>>ar1[j];
+        }
+        int ar2[n];
+        for(j=0;j<n;j++)
+        {
+            cin>>ar2[j];
+        }
+                
+        for(j=0;j<n;j++)
+        {
+        score = (ar1[j]*20 )-(ar2[j]*10);
+       
+        if(score<0)
+        {
+        score = 0;
+        }
+        if(score>win)
+        win = score;
+        }
+        cout<<win<<endl;
+        win=0;
+        
+        
+    }
+   
+    
+   
+    
+    
+    return 0;
+    
+}
