@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int t;
+    cin>>t;
+    while(t>0)
+    {
+        t--;
+        int songs;
+        cin>>songs;
+        long int arr[songs];
+        for(int i=1;i<=songs;i++)
+        {
+            cin>>arr[i];
+        }
+        int position;
+        cin>>position;
+        int key;
+        key=arr[position];
+        for(int k=1;k<=songs;k++)
+        {
+            for(int l=1;l<=songs-k;l++)
+            {
+                if(arr[l]>arr[l+1])
+                {
+                    int temp;
+                    temp = arr[l+1];
+                    arr[l+1] = arr[l];
+                    arr[l] = temp;
+                }
+            }
+        }
+        for(int x=1;x<=songs;x++)
+        {
+            if(arr[x]==key)
+            cout<<x<<endl;
+            //cout<<arr[x]<<"\t";
+        }
+    }
+}
